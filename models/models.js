@@ -8,6 +8,9 @@ const datesheetSchema = new mongoose.Schema({
     image:{
         type: String,
         required: true
+    },
+    date:{
+        type:String
     }
 });
 module.exports = mongoose.model('Datesheet', datesheetSchema);

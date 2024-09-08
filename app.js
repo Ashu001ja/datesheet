@@ -39,7 +39,7 @@ app.get('/',async (req, res) => {
 
 app.post('/upload', upload.single('image'), async (req, res) => {
   const { title } = req.body;
-  const data = datesheetSchema({ title, image: req.file.path });
+  const data = datesheetSchema({ title, image: req.file.path,date: new Date().toLocaleDateString() });
   await data.save();
   res.send(data);
 });
